@@ -106,5 +106,4 @@ const calculateBalanceAndStore = function () {
     user.balance = user.transactions.reduce((acc, cur) => acc + cur, 0);
     return user;
   });
-  console.log(users);
 };
