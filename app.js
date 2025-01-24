@@ -66,14 +66,14 @@ app.post('/sort', function (req, res) {
 });
 
 app.post('/accountClose', function (req, res) {
-  const currentUser = users.find(user => user.username === req.body.userName);
-  if (currentUser) {
+  const accountClosingUser = users.find(user => user.username === req.body.userName);
+  if (accountClosingUser) {
     bcrypt.compare(String(req.body.pin), currentUser.pin, function (err, result) {
       if (result) {
-        const index = accounts.findIndex(acc => acc.username === username);
+        const index = accounts.findIndex(acc => acc.username === accountClosingUser.username);
         accounts.splice(index, 1);
       }
-      res.json(currentUser);
+      res.json(accountClosingUser);
     });
   } else {
     res.json({});

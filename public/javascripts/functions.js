@@ -65,10 +65,17 @@ const sort = function (currentAccount, sorted) {
   );
 };
 
-const closeAccount = function (inputCloseUsername, inputClosePin) {
+const closeAccount = function (
+  inputCloseUsername,
+  inputClosePin,
+  inputLoginUsername,
+  inputLoginPin
+) {
   inputCloseUsername.value = inputClosePin.value = '';
+  inputLoginUsername.disabled = inputLoginPin.disabled = false;
   labelWelcome.textContent = `Log in to get started`;
   containerApp.style.opacity = 0;
+  logout();
 };
 
 const updateUI = function (acc) {

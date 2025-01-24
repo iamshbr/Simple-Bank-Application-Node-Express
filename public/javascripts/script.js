@@ -136,7 +136,7 @@ btnClose.addEventListener('click', function (e) {
   })
     .then(async data => {
       currentAccount = await data.json();
-      closeAccount(inputCloseUsername, inputClosePin);
+      closeAccount(inputCloseUsername, inputClosePin, inputLoginUsername, inputLoginPin);
     })
     .catch(err => {
       console.log(err);
