@@ -60,7 +60,13 @@ app.post('/sort', function (req, res) {
   const { sort, currentUsername } = req.body;
   userTransactionSorted = sort;
   const currentUser = users.find(user => user.username === currentUsername);
-  currentUser.transactions.sort((a, b) => b - a);
+
+  const arr = currentUser.transactions
+    .map((trans, index) => [trans, currentUser.transactionDates[index]])
+    .sort((a, b) => b[0] - a[0]);
+
+  currentUser.transactions = arr.map(val => val[0]);
+  currentUser.transactionDates = arr.map(val => val[1]);
   currentUser.sorted = userTransactionSorted;
   res.json(currentUser);
 });

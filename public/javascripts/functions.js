@@ -55,7 +55,7 @@ const loanSuccessful = function (currentAccount, inputLoanAmount) {
   setTimeout(() => updateUI(currentAccount), 2500);
 };
 
-const sort = function (currentAccount, sorted) {
+const sort = function (currentAccount, sorted, btn) {
   displayMovements(
     currentAccount.transactions,
     currentAccount.transactionDates,
@@ -63,6 +63,11 @@ const sort = function (currentAccount, sorted) {
     currentAccount.currency,
     sorted
   );
+  if (sorted) {
+    btn.innerHTML = `&uarr; SORT`;
+  } else {
+    btn.innerHTML = `&downarrow; SORT`;
+  }
 };
 
 const closeAccount = function (

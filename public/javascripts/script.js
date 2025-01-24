@@ -111,8 +111,7 @@ btnSort.addEventListener('click', function (e) {
   })
     .then(async data => {
       currentAccount = await data.json();
-      console.log(currentAccount, currentAccount.sorted);
-      sort(currentAccount, currentAccount.sorted);
+      sort(currentAccount, currentAccount.sorted, btnSort);
     })
     .catch(err => {
       console.log(err);
