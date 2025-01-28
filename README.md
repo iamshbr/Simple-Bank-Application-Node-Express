@@ -12,7 +12,7 @@ The **Simple Banking Application** is a web application.
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/iamshbr/Simple-Bank-Application-Node-Express.git
+   git clone https://github.com/iamshbr/simple-weather-app.git
 
 ```
 
